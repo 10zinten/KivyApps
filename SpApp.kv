@@ -20,3 +20,16 @@
                 id: my_label
                 text: my_textinput.text
                 font_size: my_textinput.font_size
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: 150
+        Label:
+            id: label1
+            text: my_textinput.text[:-3][::-1]
+            font_size: 100
+        Label:
+            id: label2
+            text: my_textinput.text[-3:][::-1]
+            font_size: 100

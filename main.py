@@ -18,6 +18,12 @@ class ScatterTextWidget(BoxLayout):
         label = self.ids['my_label']
         label.color = colour
 
+        label1 = self.ids.label1
+        label2 = self.ids.label2
+
+        label1.color = colour
+        label2.color = colour
+
 presentation = Builder.load_file("SpApp.kv")
 
 class SpApp(App):
