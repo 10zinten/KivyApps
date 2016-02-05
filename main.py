@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.lang import Builder
 
 # tracks the multitouch, make thing bigger and samller and moves thing
 from kivy.uix.scatter import Scatter
@@ -8,28 +9,21 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.boxlayout import BoxLayout
 
+import random
+
+class ScatterTextWidget(BoxLayout):
+    def change_label_colour(self, *args):
+        colour = [random.random() for i in xrange(3)] + [1]
+        # general way to refer to any id from python side
+        label = self.ids['my_label']
+        label.color = colour
+
+
+presentation = Builder.load_file("SpApp.kv")
 
 class SpApp(App):
     def build(self):
-        b = BoxLayout(orientation='vertical')
-        t = TextInput(font_size=150,
-                      size_hint_y=None,
-                      height=200,
-                      text='Defalut')
-        f = FloatLayout()        # three Widgets
-        s = Scatter()
-        l = Label(text= "Defalut!",
-                  font_size=150)
-
-        t.bind(text=l.setter('text'))
-        #Binding texinput and label
-
-        f.add_widget(s)
-        s.add_widget(l)
-
-        b.add_widget(t)
-        b.add_widget(f)
-        return b
+        return ScatterTextWidget()
 
 if __name__ == "__main__":
     SpApp().run()

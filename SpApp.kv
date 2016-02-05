@@ -1,0 +1,20 @@
+# File name : main.py
+#: kivy 1.7.2
+
+<ScatterTextWidget>:
+    orientation: 'vertical'
+    TextInput:
+        id: my_textinput
+        font_size: 150
+        size_hint_y: None
+        height: 200
+        text: 'default'
+        on_text: root.change_label_colour()
+        # calling python function from kivy side
+        # root refer to the most top level widget of the widgets tree
+    FloatLayout:
+        Scatter:
+            Label:
+                id: my_label
+                text: my_textinput.text
+                font_size: my_textinput.font_size
