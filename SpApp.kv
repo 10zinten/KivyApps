@@ -1,5 +1,6 @@
 # File name : main.py
 #: kivy 1.7.2
+#: import random random
 
 <ScatterTextWidget>:
     orientation: 'vertical'
@@ -10,6 +11,7 @@
         height: 200
         text: 'default'
         on_text: root.change_label_colour()
+        # without calling py function my_label.color = [random.random() for i in xrange(3)] + [1]
         # calling python function from kivy side
         # root refer to the most top level widget of the widgets tree
     FloatLayout:
