@@ -9,20 +9,17 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.boxlayout import BoxLayout
 
+from kivy.properties import ListProperty
+
 import random
 
 class ScatterTextWidget(BoxLayout):
+
+    text_colour = ListProperty([1,0,0,1])
+
     def change_label_colour(self, *args):
         colour = [random.random() for i in xrange(3)] + [1]
-        # general way to refer to any id from python side
-        label = self.ids['my_label']
-        label.color = colour
-
-        label1 = self.ids.label1
-        label2 = self.ids.label2
-
-        label1.color = colour
-        label2.color = colour
+        self.text_colour = colour
 
 presentation = Builder.load_file("SpApp.kv")
 

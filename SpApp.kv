@@ -20,6 +20,7 @@
                 id: my_label
                 text: my_textinput.text
                 font_size: my_textinput.font_size
+                color: root.text_colour
 
     BoxLayout:
         orientation: 'horizontal'
@@ -27,9 +28,11 @@
         height: 150
         Label:
             id: label1
-            text: my_textinput.text[:-3][::-1]
+            text: my_textinput.text[-3:]
             font_size: 100
+            color: root.text_colour
         Label:
             id: label2
             text: my_textinput.text[-3:][::-1]
             font_size: 100
+            color: root.text_colour
