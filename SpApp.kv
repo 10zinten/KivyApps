@@ -3,10 +3,10 @@
 #: import random random
 
 <ScatterTextWidget>:
-    orientation: 'vertical'
+    orientation: 'horizontal'
     canvas:
         Color:
-            rgba: 0,0,1,1
+            rgba: root.text_colour
         Rectangle:
             pos: self.pos
             size: self.size
@@ -15,7 +15,7 @@
         font_size: 150
         size_hint_y: None
         height: 200
-        text: 'default'
+        text: 'Party Night'
         on_text: root.change_label_colour()
         # without calling py function my_label.color = [random.random() for i in xrange(3)] + [1]
         # calling python function from kivy side
@@ -27,18 +27,3 @@
                 text: my_textinput.text
                 font_size: my_textinput.font_size
                 color: root.text_colour
-
-    BoxLayout:
-        orientation: 'horizontal'
-        size_hint_y: None
-        height: 150
-        Label:
-            id: label1
-            text: my_textinput.text[-3:][::-1]
-            font_size: 100
-            color: root.text_colour
-        Label:
-            id: label2
-            text: my_textinput.text[-3:][::-1]
-            font_size: 100
-            color: root.text_colour
