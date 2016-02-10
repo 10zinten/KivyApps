@@ -4,6 +4,12 @@
 
 <ScatterTextWidget>:
     orientation: 'vertical'
+    canvas:
+        Color:
+            rgba: 0,0,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
     TextInput:
         id: my_textinput
         font_size: 150
